@@ -110,7 +110,7 @@ const Contact = () => {
               </form>
               {isSubmitted && (
                 <div style={styles.thankYouMessage}>
-                  <p style={styles.thankYouText}>Thank you for your feedback! we make Changes Soon!
+                  <p style={styles.thankYouText}>Thank you for your feedback! I will make Changes Soon!
                   </p>
                 </div>
               )}
