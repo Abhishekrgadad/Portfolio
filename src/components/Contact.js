@@ -3,10 +3,15 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
 const Contact = () => {
-  const [feedback, setFeedback] = useState({ rating: 0, comment: "" });
+  const [feedback, setFeedback] = useState({ name: "", rating: 0, comment: "" });
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [error, setError] = useState("");
 
   const WEB3FORMS_ACCESS_KEY = "4987e65e-fac8-4aae-aacf-fb3a7660319f"; // Replace with your actual Web3Forms access key
+
+  const handleNameChange = (event) => {
+    setFeedback((prevFeedback) => ({ ...prevFeedback, name: event.target.value }));
+  };
 
   const handleRatingChange = (rating) => {
     setFeedback((prevFeedback) => ({ ...prevFeedback, rating }));
@@ -19,11 +24,19 @@ const Contact = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
+    // Validate form fields
+    if (feedback.name === "" || feedback.rating === 0 || feedback.comment === "") {
+      setError("Fill Details and Don't worry i wont use your Data");
+      return;
+    }
+
+    setError(""); // Clear any previous errors
+
     const formData = new FormData();
     formData.append("access_key", WEB3FORMS_ACCESS_KEY);
+    formData.append("name", feedback.name);
     formData.append("rating", feedback.rating);
     formData.append("comment", feedback.comment);
-    
 
     try {
       const response = await fetch("https://api.web3forms.com/submit", {
@@ -33,7 +46,7 @@ const Contact = () => {
 
       if (response.ok) {
         setIsSubmitted(true);
-        setFeedback({ rating: 0, comment: "" });
+        setFeedback({ name: "", rating: 0, comment: "" });
       } else {
         console.error("Form submission failed.");
       }
@@ -78,8 +91,21 @@ const Contact = () => {
           <motion.div className="right-box" initial={{ opacity: 0, y: "50px" }} whileInView={fade} style={styles.rightBox}>
             {/* Feedback Form */}
             <div style={styles.feedbackCard}>
-              <h2 style={styles.formTitle}>You Reached till end just Leave Your Honest Feedback about this site!</h2>
+              <h2 style={styles.formTitle}>Hey, Don't go back simply Leave Your Honest Feedback!</h2>
               <form onSubmit={handleSubmit}>
+                {/* Name Input */}
+                <div style={styles.formGroup}>
+                  <p style={styles.formLabel}>Name:</p>
+                  <input
+                    type="text"
+                    value={feedback.name}
+                    onChange={handleNameChange}
+                    style={styles.inputField}
+                    placeholder="Enter your name"
+                  />
+                </div>
+
+                {/* Rating Input */}
                 <div style={styles.formGroup}>
                   <p style={styles.formLabel}>Rating:</p>
                   <div style={styles.ratingGroup}>
@@ -95,6 +121,8 @@ const Contact = () => {
                     ))}
                   </div>
                 </div>
+
+                {/* Comment Input */}
                 <div style={styles.formGroup}>
                   <p style={styles.formLabel}>Comment:</p>
                   <textarea
@@ -102,16 +130,22 @@ const Contact = () => {
                     value={feedback.comment}
                     onChange={handleCommentChange}
                     rows={5}
+                    placeholder="Leave a comment"
                   />
                 </div>
+
+                {/* Error Message */}
+                {error && <p style={styles.errorMessage}>{error}</p>}
+
+                {/* Submit Button */}
                 <button type="submit" style={styles.submitButton}>
                   Submit Feedback
                 </button>
               </form>
+
               {isSubmitted && (
                 <div style={styles.thankYouMessage}>
-                  <p style={styles.thankYouText}>Thank you for your feedback! I will make Changes Soon!
-                  </p>
+                  <p style={styles.thankYouText}>Thank you for your feedback! I will make Changes soon!</p>
                 </div>
               )}
             </div>
@@ -151,7 +185,7 @@ const styles = {
     padding: "20px",
   },
   feedbackCard: {
-    backgroundColor:"#CCEDEF",
+    backgroundColor: "#CCEDEF",
     borderRadius: "10px",
     padding: "20px",
     boxShadow: "0 2px 8px rgba(0,0,0,0.1)",
@@ -162,7 +196,7 @@ const styles = {
     fontSize: "1.25rem",
     fontWeight: "bold",
     marginBottom: "10px",
-    color:"Black",
+    color: "Black",
   },
   formGroup: {
     marginBottom: "20px",
@@ -171,7 +205,15 @@ const styles = {
     fontSize: "0.9rem",
     fontWeight: "bold",
     marginBottom: "5px",
-    color:"Black"
+    color: "Black",
+  },
+  inputField: {
+    width: "100%",
+    padding: "10px",
+    borderRadius: "5px",
+    border: "1px solid #ccc",
+    outline: "none",
+    fontSize: "1rem",
   },
   ratingGroup: {
     display: "flex",
@@ -205,6 +247,11 @@ const styles = {
     outline: "none",
     fontSize: "1rem",
   },
+  errorMessage: {
+    color: "red",
+    fontSize: "0.85rem",
+    marginBottom: "10px",
+  },
   submitButton: {
     width: "100%",
     padding: "10px",
@@ -220,7 +267,7 @@ const styles = {
     padding: "10px",
     backgroundColor: "#e0f8e0",
     borderRadius: "5px",
-    color:"Black"
+    color: "Black",
   },
   thankYouText: {
     fontSize: "0.9rem",
