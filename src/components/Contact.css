@@ -1,0 +1,127 @@
+.contact {
+    padding: 50px 0;
+    background-color: #f7f7f7;
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .heading-text {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .contact-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 30px;
+    max-width: 900px;
+    width: 100%;
+    padding: 20px;
+  }
+  
+  .left-box, .right-box {
+    width: 100%;
+  }
+  
+  .contact-heading p {
+    font-size: 1.2rem;
+  }
+  
+  .contact-hello {
+    margin-top: 20px;
+  }
+  
+  .hello-links {
+    display: block;
+    margin: 5px 0;
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .form-card {
+    background-color: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 450px;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-group label {
+    font-size: 1rem;
+    margin-bottom: 10px;
+  }
+  
+  .form-group input, .form-group textarea {
+    padding: 12px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .form-group button {
+    padding: 12px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .form-group button:hover {
+    background-color: #0056b3;
+  }
+  
+  .mt-4 {
+    margin-top: 1rem;
+  }
+  
+  .p-4 {
+    padding: 1rem;
+  }
+  
+  .bg-green-100 {
+    background-color: #e6ffed;
+  }
+  
+  .bg-blue-500 {
+    background-color: #007bff;
+  }
+  
+  .bg-blue-700 {
+    background-color: #0056b3;
+  }
+  
+  .text-white {
+    color: white;
+  }
+  
+  .text-sm {
+    font-size: 0.875rem;
+  }
+  
+  .font-bold {
+    font-weight: bold;
+  }
+  
+  .rounded-lg {
+    border-radius: 0.5rem;
+  }
+  
