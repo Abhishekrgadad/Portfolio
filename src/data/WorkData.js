@@ -1,5 +1,19 @@
 export const WorkData = [
 	{
+		title: "Mern-Blog using Vite+React",
+		desc:"An best responsive with all required components for a Blog-site includes Home , Projects, Services etc.",
+		tech:["Reactjs","Javascript","Tailwind CSS","Redux","Flowbite-React"],
+		gitlink:"//github.com/Abhishekrgadad/Mern-Blog",
+		site:"//github.com/Abhishekrgadad/Mern-Blog",
+	},
+	{
+		title: "MailInbox using React",
+		desc:"An Interactive MailInbox with Reply options just like Gmail with Limited Features",
+		tech:["Reactjs","Javascript","Tailwind CSS","Redux"],
+		gitlink:"//github.com/Abhishekrgadad/MailInbox",
+		site:"//github.com/Abhishekrgadad/MailInbox",
+	},
+	{
 		title: "Drowsiness Detection using Opencv-python",
 		desc: "An innovative way of Alerting the People who feels drowsy during Driving or in any emergency cases.",
 		tech: ["OpenCv-python", "Dlib packages", "python Libraries"],
@@ -22,13 +36,13 @@ export const WorkData = [
 	// 	site: "//todo-list-v0.netlify.app",
 	// },
 
-	{
-		title: "Netflix Clone",
-		desc: "A movie app using the netflix UI with a touch of creativity.",
-		tech: ["Html", "Css", "Javascript"],
-		gitlink: "//github.com/Abhishekrgadad/Netflix-Clone",
-		site: "//github.com/Abhishekrgadad/Netflix-Clone",
-	},
+	// {
+	// 	title: "Netflix Clone",
+	// 	desc: "A movie app using the netflix UI with a touch of creativity.",
+	// 	tech: ["Html", "Css", "Javascript"],
+	// 	gitlink: "//github.com/Abhishekrgadad/Netflix-Clone",
+	// 	site: "//github.com/Abhishekrgadad/Netflix-Clone",
+	// },
 
 	// {
 	// 	title: "Budget App",
