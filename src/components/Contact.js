@@ -26,7 +26,7 @@ const Contact = () => {
 
     // Validate form fields
     if (feedback.name === "" || feedback.rating === 0 || feedback.comment === "") {
-      setError("Fill Details and Don't worry i wont use your Data");
+      setError("Fill all the Fields");
       return;
     }
 
@@ -91,7 +91,7 @@ const Contact = () => {
           <motion.div className="right-box" initial={{ opacity: 0, y: "50px" }} whileInView={fade} style={styles.rightBox}>
             {/* Feedback Form */}
             <div style={styles.feedbackCard}>
-              <h2 style={styles.formTitle}>Hey, Don't go back simply Leave Your Honest Feedback!</h2>
+              <h2 style={styles.formTitle}>Leave a Feedback about this site!</h2>
               <form onSubmit={handleSubmit}>
                 {/* Name Input */}
                 <div style={styles.formGroup}>
@@ -145,7 +145,7 @@ const Contact = () => {
 
               {isSubmitted && (
                 <div style={styles.thankYouMessage}>
-                  <p style={styles.thankYouText}>Thank you for your feedback! I will make Changes soon!</p>
+                  <p style={styles.thankYouText}>Thank you for your feedback!</p>
                 </div>
               )}
             </div>
