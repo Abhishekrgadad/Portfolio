@@ -17,7 +17,7 @@
 .works-card {
 	background-color: var(--card-blue-shade);
 	color: var(--nav-grey);
-	border-radius: 5px;
+	border-radius: 15px;
 	position: relative;
 	padding: 1rem 2rem;
 	width: 300px;
