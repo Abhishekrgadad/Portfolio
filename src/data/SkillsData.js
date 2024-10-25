@@ -10,10 +10,8 @@ import {
 	FaJava,
   } from "react-icons/fa";
   import { DiJavascript1 } from "react-icons/di";
-  import { VscJson, VscVm, VscSettingsGear } from "react-icons/vsc"; // VSCode, Linux Terminal, Settings
   import {
 	SiTailwindcss,
-	SiNextdotjs,
 	SiMongodb,
 	SiC,
 	SiNetlify,
