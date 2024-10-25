@@ -3,7 +3,9 @@
 ***Demo***
 [portfilio.webm](https://github.com/user-attachments/assets/9d0fb57a-5e10-432a-8671-ab251cee583d)
 
-![Preview](https://github.com/user-attachments/assets/9d0fb57a-5e10-432a-8671-ab251cee583d)
+
+![Autoplay Video](https://github.com/user-attachments/assets/9d0fb57a-5e10-432a-8671-ab251cee583d)
+
 
 
 Visit here: https://abhishekrg.netlify.app/
